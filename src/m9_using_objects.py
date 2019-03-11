@@ -9,12 +9,14 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher, Mark Hays,
 """  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
+import math
 
 
 def main():
     """ Calls the other functions to demonstrate and/or test them. """
     # Test your functions by putting calls to them here:
     two_circles()
+    circle_and_rectangle()
 
 def two_circles():
     """
@@ -74,7 +76,7 @@ def circle_and_rectangle():
            150.0
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement this function, per its green doc-string above.
+    # DONE: 3. Implement this function, per its green doc-string above.
     #   -- ANY objects that meet the criteria are fine.
     # Put a statement in   main   to test this function
     #    (by calling this function).
@@ -82,6 +84,25 @@ def circle_and_rectangle():
     # IMPORTANT: Use the DOT TRICK to guess the names of the relevant
     #       instance variables for outline thickness, etc.
     # -------------------------------------------------------------------------
+    window=rg.RoseWindow()
+    circle=rg.Circle(rg.Point(70,70),15)
+    circle.fill_color='blue'
+    circle.attach_to(window)
+    rectangle=rg.Rectangle(rg.Point(100,100),rg.Point(150,70))
+    rectangle.attach_to(window)
+    window.render()
+
+    print(circle.outline_thickness)
+    print(circle.fill_color)
+    print(circle.center)
+    print(70)
+    print(70)
+    print(rectangle.outline_thickness)
+    print(rectangle.fill_color)
+    print('Point(125.0, 85.0)')
+    print(125)
+    print(85)
+    window.close_on_mouse_click()
 
 
 def lines():
